@@ -1,0 +1,20 @@
+nam: Lint Workflow
+on:
+  pull_request:
+    branches:
+      - dev
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Use NodeJS 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Deps
+        run: npm install
+      - name: Run Lint
+        run: npm run eslint
