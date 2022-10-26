@@ -1,4 +1,4 @@
-nam: Lint Workflow
+name: Lint Workflow
 on:
   push:
     branches:
